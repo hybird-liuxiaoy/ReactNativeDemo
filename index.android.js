@@ -6,13 +6,40 @@
 
 import React, { Component,PropTypes } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
+  AppRegistry,//用于注册组件
+  StyleSheet,//用于创建样式
   Text,
   View,
     TextInput,ScrollView, Image,ListView,Navigator,TouchableHighlight,
-    WebView, WebSocket
+    WebView, WebSocket,
+  PixelRatio
 } from 'react-native';
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,//flex:1 将最外层的View组件铺满整个屏幕
+        borderWidth:1,//边框宽度1pt
+        borderWidth:1/PixelRatio.get(),//get获取高清设备的像素比,最小线宽:1/PixelRatio.get()
+        borderColor:'red',//边框颜色
+
+        flexDirection:'column',//布局方向 默认竖向,横向为'row'
+        justifyContent: 'center',//垂直居中,内容按fiexDirection的方向居中
+        alignItems: 'center',//水平居中
+        backgroundColor: '#F5FCFF'
+    },
+    welcome: {
+        color:'red',
+        fontSize: 20,//字体号
+        fontWeight: 'bold',//字体粗体
+        textAlign: 'center',
+        margin: 10,
+    },
+    instructions: {
+        textAlign: 'center',
+        color: '#333333',
+        marginBottom: 5,
+    },
+});
 
 class AwesomeProject extends Component {
   constructor(props) {
@@ -37,24 +64,6 @@ class AwesomeProject extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 //prop 属性
 class Bananas extends Component {
@@ -68,8 +77,7 @@ class Bananas extends Component {
   }
 }
 //state 状态
-// css样式
-// flex占位布局 位置分配有些奇怪
+// css样式 flex占位布局 位置分配有些奇怪
 class Blink extends Component {
   constructor(props) {
     super(props);
@@ -85,8 +93,8 @@ class Blink extends Component {
     // 根据当前showText的值决定是否显示text内容
     let display = this.state.showText ? this.props.text : ' ';
     return (
-        <View style={{flex: 1}}>
-        <Text style={[styles.container,{flex: 2}]}>{display}</Text>
+        <View style={{flex: 1}/*内联样式*/}>
+        <Text style={[styles.container/*外部样式*/,{flex: 2}/*内联样式*/]}>{display}</Text>
           <Text style={[styles.container, styles.instructions,{flex: 2, width: 500, backgroundColor: 'powderblue'}]}>{display}</Text>
           </View>
     );
@@ -132,7 +140,6 @@ class ScrollViewDemo extends Component {
     );
   }
 }
-
 //ListViewDemo
 class ListViewDemo extends Component {
   // 初始化伪数据
@@ -148,15 +155,14 @@ class ListViewDemo extends Component {
   render() {
     return (
         <View style={{paddingTop: 22}}>
-          <ListView
+            <ListView
               dataSource={this.state.dataSource}
               renderRow={(rowData) => <Text>{rowData}</Text>}
-          />
+            />
         </View>
     );
   }
 }
-
 //NavigatorDemo
 class NavigatorDemo extends Component{
   render() {
@@ -208,7 +214,7 @@ class MyScene extends Component {
         //这是React的生命周期函数，会在界面加载完成后执行一次
         //在render()之前被调用
         //业务逻辑的处理都应该放在这里,如对state的操作等
-    },
+    }
 
     render() {
         //渲染并返回一个虚拟DOM
@@ -233,14 +239,14 @@ class MyScene extends Component {
     }
 
     //3.更新阶段
-    componentWillRecieveProps(object nextProps){
+    componentWillRecieveProps(nextProps){//object
         //在this.props被修改或者父组件调用setProps()之后调用
     }
     shouldComponentUpdate(nextProps, nextState){
         //是否需要更新
         return true;
     }
-    componentWillUpdate(object nextProps, object nextState){
+    componentWillUpdate(nextProps, nextState){//object nextProps, object nextState
         //将要更新
     }
     componentDidUpdate(){
@@ -256,8 +262,7 @@ class MyScene extends Component {
 
 }
 
-
-
+var ToastAndroid = require('./ToastAndroid');
 //demo
 class BlinkApp extends Component {
   constructor(props) {
@@ -267,8 +272,13 @@ class BlinkApp extends Component {
   render() {
     return (
         <View>
-          <Text text="处理文本输入"></Text>
-          <Text style={{padding: 10, fontSize: 42}}>
+          <Text text="该文本无效"></Text>
+          <Text style={{padding: 10, fontSize: 20}} numberOfLines={1/*最大行数*/} onPress={()=>{
+                //onPress 触摸事件
+          }} onLayout={()=>{
+                //onlayout 获取布局位置和大小
+                return {"layout":{"y":10,'width':200,'x':10,'height':40}};
+          }}>
             {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
           </Text>
           <TextInput
@@ -276,7 +286,6 @@ class BlinkApp extends Component {
               placeholder="Type here to translate!"
               onChangeText={(text) => {
                   this.setState({text});
-                  var ToastAndroid = require('./ToastAndroid');
                   // ToastAndroid.show('Awesome', ToastAndroid.SHORT);
                   ToastAndroid.measureLayout(11,22,
                       (msg) =>{console.log(msg);ToastAndroid.show(msg,ToastAndroid.SHORT)},
@@ -294,6 +303,7 @@ class BlinkApp extends Component {
     );
   }
 }
+
 
 //network 使用Fetch API https://developer.mozilla.org/en-US/docs/Web/API/Request
 class FetchDemo extends Component{
@@ -331,7 +341,6 @@ class FetchDemo extends Component{
     }
   }
 }
-
 //network 使用XMLHttpRequest API https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 class XMLHttpRequestDemo extends Component{
   constructor(props) {
@@ -353,7 +362,6 @@ class XMLHttpRequestDemo extends Component{
     request.send();
   }
 }
-
 //network 使用WebSocket API https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
 class WebSocketDemo extends Component {
   constructor(props) {
