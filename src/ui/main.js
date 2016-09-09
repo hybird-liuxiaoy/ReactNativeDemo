@@ -10,6 +10,7 @@ import ReactNative,{
 } from 'react-native';
 
 import hellowworld from './hellowworld'
+import fetchblob from './fetchblob'
 
 export default class ApiDemos extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ export default class ApiDemos extends Component {
         this.state = {
             dataSource: ds.cloneWithRows([
                 {name: 'Hello World', title:'Hello World', component: hellowworld},
+                {name: 'FetchBlob', title:'Fetch Blob', component: fetchblob},
             ])
         };
 

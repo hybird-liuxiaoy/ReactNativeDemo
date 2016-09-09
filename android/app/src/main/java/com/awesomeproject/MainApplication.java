@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.facebook.react.ReactApplication;
+import com.RNFetchBlob.RNFetchBlobPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -38,7 +39,8 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new MainReactPackage(),
+            new RNFetchBlobPackage()
               ,new AnExampleReactPackage()// <-- 添加这一行，类名替换成你的Package类的名字. 注册模块
       );
     }
