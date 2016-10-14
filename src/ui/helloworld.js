@@ -57,32 +57,38 @@ export default class helloworld extends Component {
 }
 const styles = StyleSheet.create({
     lv_container: {
-        flex: 1,
-        borderWidth:1,
-        borderColor:'red',
-        flexDirection:'column',
-        backgroundColor: '#F5FCFF'
+        flex: 1,//使用Flexbox布局
+        //flexDirection:'column',//决定布局的主轴。子元素沿着主轴方向排列(row)
+        //justifyContent:'',//决定其子元素沿着主轴的排列方式
+        //alignItems:'',//决定其子元素沿着次轴的排列方式
+
+        borderWidth:1,//边框宽度
+        borderColor:'red',//边框颜色
+        borderRadius:5,//边框四个角的弧度,可以分别设置
+        backgroundColor: '#F5FCFF',//背景颜色
     },
     lv_title:{
+        color:'black',//字体颜色
         fontSize: 20,//字体号
         fontWeight: 'bold',//字体粗体
-        textAlign: 'left'
+        textAlign: 'left',//字体对齐
     },
     lv_row: {
-        borderWidth:1/PixelRatio.get(),//get获取高清设备的像素比,最小线宽:1/PixelRatio.get()
+        borderWidth:1/PixelRatio.get(),//get获取高清设备的像素比,最小线宽即1像素:1/PixelRatio.get()
+        //borderWidth:StyleSheet.hairlineWidth,
+        //borderWidth:1,
         margin: 0,
     },
     lv_rowText: {
         color:'black',
-        fontSize: 14,//字体号
+        fontSize: 14,
         textAlign: 'left'
     },
 
     container: {
         flex: 1,//flex:1 将最外层的View组件铺满整个屏幕
         borderWidth:1,//边框宽度1pt
-        borderWidth:1/PixelRatio.get(),//get获取高清设备的像素比,最小线宽:1/PixelRatio.get()
-        borderColor:'red',//边框颜色
+        borderColor:'red',
 
         flexDirection:'column',//布局方向 默认竖向,横向为'row'
         justifyContent: 'center',//垂直居中,内容按fiexDirection的方向居中
@@ -91,8 +97,8 @@ const styles = StyleSheet.create({
     },
     welcome: {
         color:'red',
-        fontSize: 20,//字体号
-        fontWeight: 'bold',//字体粗体
+        fontSize: 20,
+        fontWeight: 'bold',
         textAlign: 'center',
         margin: 10,
     },
@@ -316,7 +322,8 @@ class MyScene extends Component {
     }
 
     //4.销毁阶段
-    componentWillUnMount(){
+    componentWillUnmount(){
+        //注意:后缀是Unmount 不是UnMount
         //这是React的生命周期函数，会在界面将被卸载时执行一次
         //开发者建议:取消事件绑定、移除虚拟DOM中对应组件的数据结构、销毁一些无效的定时器等工作
     }

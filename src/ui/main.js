@@ -3,14 +3,14 @@
  */
 import React, { Component } from 'react';
 import ReactNative,{
-    AppRegistry,//用于注册组件
     StyleSheet,//用于创建样式
-    Text,View,Image,ListView,Navigator,TouchableOpacity,ScrollView,
-    Platform,PixelRatio
+    Text,View,Image,ListView,Navigator,TouchableOpacity,ScrollView,//RN框架UI组件
+    Platform,PixelRatio,//RN框架工具组件
 } from 'react-native';
 
-import hellowworld from './hellowworld'
-import fetchblob from './fetchblob'
+import helloWorld from './helloworld'
+import fetchBlob from './fetchblob'
+import segmentedAndroid from './segmentedAndroid'
 
 export default class ApiDemos extends Component {
     constructor(props) {
@@ -18,8 +18,9 @@ export default class ApiDemos extends Component {
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
             dataSource: ds.cloneWithRows([
-                {name: 'Hello World', title:'Hello World', component: hellowworld},
-                {name: 'FetchBlob', title:'Fetch Blob', component: fetchblob},
+                {name: 'Hello World', title:'Hello World', component: helloWorld},
+                {name: 'FetchBlob', title:'Fetch Blob', component: fetchBlob},
+                {name: 'SegmentedAndroid', title:'SegmentedAndroid', component: segmentedAndroid},
             ])
         };
 
@@ -70,17 +71,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF'
     },
     title:{
-        fontSize: 20,//字体号
-        fontWeight: 'bold',//字体粗体
+        fontSize: 20,
+        fontWeight: 'bold',
         textAlign: 'left'
     },
     row: {
-        borderWidth:1/PixelRatio.get(),//get获取高清设备的像素比,最小线宽:1/PixelRatio.get()
+        borderWidth:1/PixelRatio.get(),
         margin: 0,
     },
     rowText: {
         color:'black',
-        fontSize: 14,//字体号
+        fontSize: 14,
         textAlign: 'left'
     }
 });
