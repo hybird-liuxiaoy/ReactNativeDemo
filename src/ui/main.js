@@ -8,9 +8,10 @@ import ReactNative,{
     Platform,PixelRatio,//RN框架工具组件
 } from 'react-native';
 
-import helloWorld from './helloworld'
-import fetchBlob from './fetchblob'
-import segmentedAndroid from './segmentedAndroid'
+import helloWorld from './helloworld';
+import fetchBlob from './fetchblob';
+import segmentedAndroid from './segmentedAndroid';
+import gesture from './gesture';
 
 export default class ApiDemos extends Component {
     constructor(props) {
@@ -19,8 +20,9 @@ export default class ApiDemos extends Component {
         this.state = {
             dataSource: ds.cloneWithRows([
                 {name: 'Hello World', title:'Hello World', component: helloWorld},
-                {name: 'FetchBlob', title:'Fetch Blob', component: fetchBlob},
-                {name: 'SegmentedAndroid', title:'SegmentedAndroid', component: segmentedAndroid},
+                {name: 'FetchBlob', title:'FetchBlobDemo', component: fetchBlob},
+                {name: 'SegmentedAndroid', title:'SegmentedAndroidDemo', component: segmentedAndroid},
+                {name: 'Gesture', title:'GestureDemo', component: gesture},
             ])
         };
 
