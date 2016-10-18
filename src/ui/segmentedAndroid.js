@@ -37,7 +37,9 @@ export default class SegmentedAndroid extends Component {
 
             return (
                 <TouchableWithoutFeedback onPress={onSelect} key={index}>
-                    <Text style={style}>{option}</Text>
+                   <View>
+                        <Text style={style}>{option}</Text>
+                   </View>
                 </TouchableWithoutFeedback>
             );
         }

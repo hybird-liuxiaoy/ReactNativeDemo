@@ -3,9 +3,8 @@
  */
 import React, { Component, PropTypes } from 'react';
 import ReactNative,{
-    AppRegistry,//用于注册组件
     StyleSheet,//用于创建样式
-    Text,View,Image,ListView,Navigator,TouchableOpacity,ScrollView,TextInput,TouchableHighlight,
+    View,Text,Image,ListView,Navigator,TouchableOpacity,ScrollView,TextInput,TouchableHighlight,
     Platform,PixelRatio
 } from 'react-native';
 

@@ -4,12 +4,9 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    TouchableHighlight,
-    Text,
+    View,Text,TouchableHighlight,TextInput,
     Platform,
     SegmentedControlIOS,
-    TextInput,
-    View
 } from 'react-native';
 
 import RNFetchBlob from 'react-native-fetch-blob'
