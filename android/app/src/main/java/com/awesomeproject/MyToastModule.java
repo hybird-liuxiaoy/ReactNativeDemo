@@ -7,7 +7,6 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.uimanager.IllegalViewOperationException;
-import com.facebook.react.uimanager.PixelUtil;
 
 import java.util.HashMap;
 import java.util.Map;
