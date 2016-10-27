@@ -1,5 +1,13 @@
 rootProject.name = 'AwesomeProject'
 
 include ':app'
+include ':react-native-push-android'
+project(':react-native-push-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-push-android/android')
 include ':react-native-fetch-blob'
 project(':react-native-fetch-blob').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fetch-blob/android')
+include ':react-native-common'
+project(':react-native-common').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-common/android')
+include ':react-native-notification-android'
+project(':react-native-notification-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-notification-android/android')
+include ':websocket-android'
+project(':websocket-android').projectDir = new File(rootProject.projectDir, '../node_modules/websocket-android/android')
