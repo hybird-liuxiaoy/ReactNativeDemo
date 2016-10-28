@@ -8,6 +8,8 @@ import {
 
 import MainUI from './ui/main'
 
+
+import RNNotification from 'react-native-notification-android';
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -16,6 +18,10 @@ export default class App extends Component {
                 {name: 'main', title:'ApiDemos', component: MainUI}
             ],
         };
+        notification = new RNNotification();
+        notification.onNotificationClicked(()=>{
+            console.log(11111111)
+        });
     }
 
     render() {
