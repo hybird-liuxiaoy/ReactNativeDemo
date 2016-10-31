@@ -10,20 +10,23 @@ import ReactNative,{
 
 import Button from './common/component/Button';
 
-const NotificationAndroid = NativeModules.RNNotificationAndroid;
+import RNNotification from 'react-native-notification-android';
 
 export default class NotificationDemo extends Component {
     constructor(props) {
         super(props);
-        console.log(NotificationAndroid);
+        notification = new RNNotification();
+        notification.onNotificationClicked(()=>{
+            console.log(11111111)
+        });
     }
 
     show(message){
-        NotificationAndroid.showNotification(message);
+        notification.showNotification(message);
     }
 
     getNum(){
-        NotificationAndroid.getApplicationIconBadgeNumber((err,num)=>{
+        notification.getApplicationIconBadgeNumber((err,num)=>{
             if (err){
                 console.log(err);
                 return;
@@ -33,7 +36,7 @@ export default class NotificationDemo extends Component {
     }
 
     clear(){
-        NotificationAndroid.clearNotification();
+        notification.clearNotification();
     }
 
     render() {
@@ -55,8 +58,6 @@ export default class NotificationDemo extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        borderWidth:1,
-        borderColor:'red',
         flexDirection:'column',
         backgroundColor: 'black'
     },
