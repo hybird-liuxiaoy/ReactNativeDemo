@@ -1,6 +1,7 @@
 /**
  * Created by liuxy on 16/9/8.
  */
+'use strict';
 import React, {Component} from 'react';
 import {
     StyleSheet,

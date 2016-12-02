@@ -1,6 +1,7 @@
 /**
  * Created by liuxy on 16/9/6.
  */
+'use strict';
 import React, { Component, PropTypes } from 'react';
 import ReactNative,{
     StyleSheet,//用于创建样式
