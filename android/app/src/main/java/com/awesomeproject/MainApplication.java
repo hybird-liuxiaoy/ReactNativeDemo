@@ -1,20 +1,16 @@
 package com.awesomeproject;
 
 import android.app.Application;
-import android.content.Intent;
-import android.view.View;
 
-import com.example.pushlibrary.RNPushAndroidPackage;
-import com.facebook.react.ReactApplication;
 import com.RNFetchBlob.RNFetchBlobPackage;
+import com.dhms.rn.pushlibrary.RNPushAndroidPackage;
+import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.shell.MainReactPackage;
-import com.facebook.react.uimanager.ReactShadowNode;
-import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewManager;
 
 import java.util.ArrayList;
