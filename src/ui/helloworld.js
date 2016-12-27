@@ -147,14 +147,20 @@ class Bananas extends Component {
 //state 状态
 // css样式 flex占位布局 位置分配有些奇怪
 class Blink extends Component {
+    intervalId;
+
     constructor(props) {
         super(props);
         this.state = { showText: true };
 
         // 每1000毫秒对showText状态做一次取反操作
-        setInterval(() => {
+        this.intervalId=setInterval(() => {
             this.setState({ showText: !this.state.showText });
         }, 1000);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.intervalId);
     }
 
     render() {
@@ -486,13 +492,13 @@ class AcceptDemo extends Component{
                     'keyboardWillShow',
                     this.scrollResponderKeyboardWillShow);
             },
-            scrollResponderKeyboardWillShow: function (e:Event) {
-                this.keyboardWillOpenTo = e;
-                this.props.onKeyboardWillShow && this.props.onKeyboardWillShow(e);
+            scrollResponderKeyboardWillShow: function (event) {
+                this.keyboardWillOpenTo = event;
+                this.props.onKeyboardWillShow && this.props.onKeyboardWillShow(event);
             },
             // //componentWillMount和scrollResponderKeyboardWillShow可以合起来写 如下:
             // componentWillMount: function() {
-            //     DeviceEventEmitter.addListener('keyboardWillShow', function(e: Event) {
+            //     DeviceEventEmitter.addListener('keyboardWillShow', function(event) {
             //         // handle event.
             //     });
             // }
