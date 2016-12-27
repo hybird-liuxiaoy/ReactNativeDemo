@@ -14,6 +14,7 @@ import fetchBlob from './fetchblob';
 import segmentedAndroid from './segmentedAndroid';
 import gesture from './gesture';
 import notification from './notification';
+import camera from './camera';
 
 export default class ApiDemos extends Component {
     constructor(props) {
@@ -26,6 +27,7 @@ export default class ApiDemos extends Component {
                 {name: 'SegmentedAndroid', title:'SegmentedAndroidDemo', component: segmentedAndroid},
                 {name: 'Gesture', title:'GestureDemo', component: gesture},
                 {name: 'Notification', title:'NotificationDemo', component: notification},
+                {name: 'Camera', title:'CameraDemo', component: camera},
             ])
         };
 

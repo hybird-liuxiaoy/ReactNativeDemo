@@ -10,3 +10,7 @@ include ':react-native-notification-android'
 project(':react-native-notification-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-notification-android/android')
 include ':react-native-push-android'
 project(':react-native-push-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-push-android/android')
+include ':react-native-camera'
+project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
+include ':react-native-barcodescanner'
+project(':react-native-barcodescanner').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-barcodescanner/android')

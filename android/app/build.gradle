@@ -130,6 +130,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:+'
     compile project(':react-native-fetch-blob')
     compile project(':react-native-push-android')
+    compile project(':react-native-camera')
+    compile project(':react-native-barcodescanner')
 }
 
 // Run this once to be able to run the application with BUCK

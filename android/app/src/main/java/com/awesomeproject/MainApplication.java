@@ -5,6 +5,8 @@ import android.app.Application;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.dhms.rn.pushlibrary.RNPushAndroidPackage;
 import com.facebook.react.ReactApplication;
+import com.lwansbrough.RCTCamera.RCTCameraPackage;
+import com.eguma.barcodescanner.BarcodeScanner;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -37,8 +39,10 @@ public class MainApplication extends Application implements ReactApplication {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
                     new RNFetchBlobPackage(),
-                    new RNPushAndroidPackage()
-                    , new AnExampleReactPackage()// <-- 添加这一行，类名替换成你的Package类的名字. 注册模块
+                    new RNPushAndroidPackage(),
+                    new RCTCameraPackage(),
+                    new BarcodeScanner(),
+                    new AnExampleReactPackage()// <-- 添加这一行，类名替换成你的Package类的名字. 注册模块
             );
         }
     };

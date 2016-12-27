@@ -16,18 +16,17 @@ import RNNotification from 'react-native-notification-android';
 export default class NotificationDemo extends Component {
     constructor(props) {
         super(props);
-        notification = new RNNotification();
-        notification.onNotificationClicked(()=>{
+        RNNotification.onNotificationClicked(()=>{
             console.log(11111111)
         });
     }
 
     show(message){
-        notification.showNotification(message);
+        RNNotification.showNotification(message);
     }
 
     getNum(){
-        notification.getApplicationIconBadgeNumber((err,num)=>{
+        RNNotification.getApplicationIconBadgeNumber((err,num)=>{
             if (err){
                 console.log(err);
                 return;
