@@ -8,6 +8,6 @@ import {
     AppRegistry,//用于注册组件
 } from 'react-native';
 
-import App from './src/app'
+import App from './js/app'
 
 AppRegistry.registerComponent('AwesomeProject', () => App);
