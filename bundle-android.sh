@@ -22,5 +22,6 @@ set -o nounset                              # Treat unset variables as an error
 #react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 
 # package to android build tmp
-cd android && ./gradlew assembleRelease
 #react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/build/intermediates/assets/release/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/
+
+cd android && ./gradlew assembleRelease --offline
