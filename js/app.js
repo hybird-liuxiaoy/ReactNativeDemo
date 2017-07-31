@@ -4,8 +4,9 @@
 'use strict'
 import React,{Component} from 'react';
 import {
-    Navigator,
+    // Navigator,
 } from 'react-native';
+import {Navigator} from 'react-native-deprecated-custom-components';
 
 import MainUI from './ui/main'
 

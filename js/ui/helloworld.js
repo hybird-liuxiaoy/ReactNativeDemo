@@ -5,9 +5,10 @@
 import React, { Component, PropTypes } from 'react';
 import ReactNative,{
     StyleSheet,//用于创建样式
-    View,Text,Image,ListView,Navigator,TouchableOpacity,ScrollView,TextInput,TouchableHighlight,
+    View,Text,Image,ListView,TouchableOpacity,ScrollView,TextInput,TouchableHighlight,
     Platform,PixelRatio
 } from 'react-native';
+import {Navigator,} from 'react-native-deprecated-custom-components';
 
 export default class helloworld extends Component {
     constructor(props) {

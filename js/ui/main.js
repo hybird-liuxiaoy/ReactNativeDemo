@@ -32,11 +32,11 @@ export default class ApiDemos extends Component {
         };
 
         if (Platform.OS === 'android') {
-            ReactNative.BackAndroid.addEventListener('hardwareBackPress', () => {
+            ReactNative.BackHandler.addEventListener('hardwareBackPress', () => {
                 if (this.props.navigator.getCurrentRoutes().length>1)
                     this.props.navigator.pop();
                 else {
-                    ReactNative.BackAndroid.exitApp();
+                    ReactNative.BackHandler.exitApp();
                 }
                 return true;
             });
