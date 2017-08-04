@@ -15,7 +15,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.soloader.SoLoader;
-
+import com.horcrux.svg.SvgPackage;
 import io.realm.react.RealmReactPackage;
 
 import java.util.ArrayList;
@@ -42,6 +42,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
+                    new SvgPackage(),
                     new RealmReactPackage(),
                     new RNFetchBlobPackage(),
                     new RNPushAndroidPackage(),

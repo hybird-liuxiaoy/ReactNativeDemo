@@ -15,6 +15,8 @@ import segmentedAndroid from './segmentedAndroid';
 import gesture from './gesture';
 import notification from './notification';
 import camera from './camera';
+import svg from './svg';
+import chart from './chart';
 
 export default class ApiDemos extends Component {
     constructor(props) {
@@ -28,6 +30,8 @@ export default class ApiDemos extends Component {
                 {name: 'Gesture', title:'GestureDemo', component: gesture},
                 {name: 'Notification', title:'NotificationDemo', component: notification},
                 {name: 'Camera', title:'CameraDemo', component: camera},
+                {name: 'Svg', title:'SvgDemo', component: svg},
+                {name: 'Chart', title:'ChartDemo', component: chart},
             ])
         };
 
@@ -68,7 +72,8 @@ export default class ApiDemos extends Component {
             </View>
         );
     }
-}
+};
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
