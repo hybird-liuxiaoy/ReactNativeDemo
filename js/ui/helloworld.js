@@ -55,7 +55,7 @@ export default class helloworld extends Component {
             </View>
         );
     }
-}
+};
 const styles = StyleSheet.create({
     lv_container: {
         flex: 1,//使用Flexbox布局
@@ -131,7 +131,7 @@ class AwesomeProject extends Component {
             </View>
         );
     }
-}
+};
 
 
 //prop 属性
@@ -144,7 +144,7 @@ class Bananas extends Component {
             <Image source={pic} style={{width: 193, height: 110}} />
         );
     }
-}
+};
 //state 状态
 // css样式 flex占位布局 位置分配有些奇怪
 class Blink extends Component {
@@ -174,7 +174,7 @@ class Blink extends Component {
             </View>
         );
     }
-}
+};
 //ScrollViewDemo
 class ScrollViewDemo extends Component {
     render() {
@@ -214,7 +214,7 @@ class ScrollViewDemo extends Component {
             </ScrollView>
         );
     }
-}
+};
 //ListViewDemo
 class ListViewDemo extends Component {
     // 初始化伪数据
@@ -237,7 +237,7 @@ class ListViewDemo extends Component {
             </View>
         );
     }
-}
+};
 //NavigatorDemo
 class NavigatorDemo extends Component{
     render() {
@@ -265,14 +265,14 @@ class NavigatorDemo extends Component{
             />
         );
     }
-}
+};
 //自定义属性 事件及其触发方法
 class MyScene extends Component {
     static propTypes = {
         title: PropTypes.string.isRequired,
         onForward: PropTypes.func.isRequired,
         onBack: PropTypes.func.isRequired,
-    }
+    };
     //1.创建阶段
     getDefaultProps(){
         //在创建类的时候被调用,组件内部不允许修改自己的props
@@ -336,7 +336,7 @@ class MyScene extends Component {
     }
 
 
-}
+};
 
 var ToastAndroid = require('./ToastAndroid');
 //demo
@@ -378,7 +378,7 @@ class BlinkApp extends Component {
             </View>
         );
     }
-}
+};
 
 class LoginDemo extends Component{
     render(){
@@ -393,7 +393,7 @@ class LoginDemo extends Component{
             </View>
         </View>;
     }
-}
+};
 
 //network 使用Fetch API https://developer.mozilla.org/en-US/docs/Web/API/Request
 class FetchDemo extends Component{
@@ -430,7 +430,7 @@ class FetchDemo extends Component{
             console.error(error);
         }
     }
-}
+};
 //network 使用XMLHttpRequest API https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 class XMLHttpRequestDemo extends Component{
     constructor(props) {
@@ -451,7 +451,7 @@ class XMLHttpRequestDemo extends Component{
         request.open('GET', 'https://www.baidu.com/');
         request.send();
     }
-}
+};
 //network 使用WebSocket API https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
 class WebSocketDemo extends Component {
     constructor(props) {
@@ -479,7 +479,7 @@ class WebSocketDemo extends Component {
             console.log(e.code, e.reason);
         };
     }
-}
+};
 
 //JavaScript模块可以通过Subscribablemixin的addListenerOn方法来接受事件。
 class AcceptDemo extends Component{
@@ -505,4 +505,4 @@ class AcceptDemo extends Component{
             // }
         }
     }
-}
+};

@@ -1,7 +1,7 @@
 /**
  * Created by liuxy on 16/05/2017.
  */
-'use strict'
+'use strict';
 import React, { Component } from 'react';
 import {
     StyleSheet,
@@ -28,7 +28,7 @@ class RealmDemo extends Component {
             </View>
         );
     }
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -80,7 +80,7 @@ realm.write(() => {
 let cars = realm.objects('Car').filtered('miles > 1000');
 
 // Will return a Results object with our 1 car
-cars.length // => 1
+cars.length; // => 1
 
 // Add another car
 realm.write(() => {
@@ -92,4 +92,4 @@ realm.write(() => {
 });
 
 // Query results are updated in real-time
-cars.length // => 2
+cars.length; // => 2

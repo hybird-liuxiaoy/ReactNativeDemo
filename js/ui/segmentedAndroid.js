@@ -2,11 +2,10 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    View,Text,TouchableWithoutFeedback
+    View, Text, TouchableWithoutFeedback
 } from 'react-native';
 
-import { RadioButtons } from 'react-native-radio-buttons'
-import { SegmentedControls } from 'react-native-radio-buttons'
+import {RadioButtons, SegmentedControls} from 'react-native-radio-buttons';
 
 export default class SegmentedAndroid extends Component {
 
@@ -69,4 +68,4 @@ export default class SegmentedAndroid extends Component {
                 />
             </View>);
     }
-}
+};

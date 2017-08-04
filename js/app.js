@@ -1,14 +1,14 @@
 /**
  * Created by liuxy on 16/9/6.
  */
-'use strict'
+'use strict';
 import React,{Component} from 'react';
 import {
     // Navigator,
 } from 'react-native';
 import {Navigator} from 'react-native-deprecated-custom-components';
 
-import MainUI from './ui/main'
+import MainUI from './ui/main';
 
 export default class App extends Component {
     constructor(props) {
@@ -29,7 +29,7 @@ export default class App extends Component {
                 // }
                 renderScene={(route, navigator) =>{
                     let Component = route.component;
-                    return <Component {...route.passProps} navigator={navigator} route={route}></Component>
+                    return (<Component {...route.passProps} navigator={navigator} route={route}/>);
                 }}
                 // configureScene={() => ({
                 //   ...Navigator.SceneConfigs.HorizontalSwipeJump,
@@ -37,6 +37,6 @@ export default class App extends Component {
             />
         );
     }
-}
+};
 
-// export default App
+// export default App;

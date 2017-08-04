@@ -5,9 +5,7 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    View,Text,TouchableHighlight,TextInput,
-    Platform,
-    SegmentedControlIOS,
+    View,
 } from 'react-native';
 
 import BarcodeScanner from 'react-native-barcode-scanner-universal'
@@ -35,7 +33,7 @@ export default class CameraDemo extends Component {
             </BarcodeScanner>
         );
     }
-}
+};
 
 const styles = StyleSheet.create({
     camera: {

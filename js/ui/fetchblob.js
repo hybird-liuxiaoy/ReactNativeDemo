@@ -5,15 +5,13 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    View,Text,TouchableHighlight,TextInput,
-    Platform,
-    SegmentedControlIOS,
+    View,Text,
 } from 'react-native';
 
-import RNFetchBlob from 'react-native-fetch-blob'
-// import bson from 'bson/browser_build/bson'
-import {BSON,Long, ObjectID,Binary,Code,DBRef,Symbol,Double,Timestamp,MaxKey,MinKey} from 'bson'
-import {Buffer} from 'buffer'
+import RNFetchBlob from 'react-native-fetch-blob';
+// import bson from 'bson/browser_build/bson';
+import {BSON,Long, ObjectID,Binary,Code,DBRef,Symbol,Double,Timestamp,MaxKey,MinKey} from 'bson';
+import {Buffer} from 'buffer';
 
 export default class FetchDemo extends Component {
 
@@ -34,8 +32,8 @@ export default class FetchDemo extends Component {
         };
         // var BSON = bson().BSON;
         // var data = BSON.serialize(userinfo, false, true, false);
-        var bson = new BSON([Long, ObjectID, Binary, Code, DBRef, Symbol, Double, Timestamp, MaxKey, MinKey])
-        var data = bson.serialize(userinfo,false,true,false)
+        var bson = new BSON([Long, ObjectID, Binary, Code, DBRef, Symbol, Double, Timestamp, MaxKey, MinKey]);
+        var data = bson.serialize(userinfo,false,true,false);
         // console.log('data:', data.toString());
         // console.log(bson.deserialize(data));
         // console.log(RNFetchBlob.base64.encode(data.toString()));
@@ -62,4 +60,4 @@ export default class FetchDemo extends Component {
             </View>
         );
     }
-}
+};

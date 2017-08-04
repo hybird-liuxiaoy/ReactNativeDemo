@@ -83,7 +83,7 @@ export default class GestureDemo extends Component {
             onResponderTerminate:()=>{//响应权已经交出；
 
             }
-        }
+        };
         this._gestureHandlers12 = {
             onStartShouldSetResponder: () => true,//用户开始触摸屏幕的时候，是否愿意成为响应者；
             onMoveShouldSetResponder: ()=> true,//在每一个触摸点开始移动的时候，是否响应触摸交互；
@@ -129,7 +129,8 @@ export default class GestureDemo extends Component {
             </View>
         );
     }
-}
+};
+
 var styles = StyleSheet.create({
     container:{
         flex:1

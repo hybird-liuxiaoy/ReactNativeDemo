@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 import ReactNative,{
     StyleSheet,
     View,
-    NativeModules
 } from 'react-native';
 
 import Button from './common/component/Button';
@@ -17,7 +16,7 @@ export default class NotificationDemo extends Component {
     constructor(props) {
         super(props);
         RNNotification.onNotificationClicked(()=>{
-            console.log(11111111)
+            console.log(11111111);
         });
     }
 
@@ -54,7 +53,8 @@ export default class NotificationDemo extends Component {
             </View>
         );
     }
-}
+};
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

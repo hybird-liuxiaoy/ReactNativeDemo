@@ -1,13 +1,15 @@
 /**
  * Created by liuxy on 16/05/2017.
  */
-'use strict'
+'use strict';
 import React, { Component } from 'react';
 import {
     StyleSheet,
     Text, View
 } from 'react-native';
+
 const Realm=require('realm');
+
 export default class RealmModelsDemo extends Component {
     render() {
         //创建Person模型 cars:{type:'list',objectType:'Car'},
@@ -45,7 +47,8 @@ export default class RealmModelsDemo extends Component {
             </View>
         );
     }
-}
+};
+
 const styles = StyleSheet.create({
     welcome: {
         fontSize: 20,

@@ -1,14 +1,12 @@
 /**
  * Created by wind on 16/8/22.
  */
-'use strict'
-import React,{Component} from 'react'
+'use strict';
+import React,{Component} from 'react';
 import {
-    TouchableOpacity,
-    View,
-    Text,
-    StyleSheet
-} from 'react-native'
+    StyleSheet,
+    View, Text, TouchableOpacity,
+} from 'react-native';
 
 export default class Button extends Component {
 
@@ -33,9 +31,9 @@ export default class Button extends Component {
                     </Text>
                 </TouchableOpacity>
             </View>
-        )
+        );
     }
-}
+};
 
 let styles = StyleSheet.create({
     submitContainer: {
@@ -65,4 +63,4 @@ let styles = StyleSheet.create({
         color: '#000000',
         fontSize: 18
     }
-})
+});
