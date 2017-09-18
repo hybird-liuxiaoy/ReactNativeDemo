@@ -4,12 +4,14 @@
 'use strict';
 import React, {Component} from 'react';
 import {
-    StyleSheet, Dimensions,
+    StyleSheet,
     View
 } from 'react-native';
 
 import * as d3 from 'd3';
 import Graph from 'react-native-line-plot';
+
+import Lib from '../util/lib';
 
 export default class ChartDemo extends Component {
 
@@ -17,31 +19,36 @@ export default class ChartDemo extends Component {
         super(props);
 
         this.state = {
+            data:[]
         };
     }
 
-    componentWillMount(){
+    componentDidMount(){
+        let that = this;
+        Lib.Fetch.getJson('http://192.168.1.5:8000', (err, json)=>{
+            if (err){
+                console.log(err);
+                return;
+            }
+            console.log(json);
+            let data = [];
+            data.push(json.means.map((x,i)=>[i,x]));
+            that.setState({data});
+        });
     }
 
     render(){
-        let dimensions = Dimensions.get('window');
-
         return (
             <View style={styles.container}>
                 <Graph
-                    graphWidth={dimensions.width-20}
-                    graphHeight={dimensions.height-60}
-                    data={
-                        [
-                            d3.range(-40,46).map(v=>{return [v,Math.sin(v/20*Math.PI)];}),
-                            d3.range(-40,41).map(v=>{return [v,Math.cos(v/20*Math.PI)];}),
-                            d3.range(-9,10).map(v=>{return [v,Math.tan(v/20*Math.PI)];}),
-                        ]
-                    }
-                    legend={["y=sin(x)","y=cos(x)","y=tan(x)"]}
+                    graphWidth={Lib.getScreenWidth()-20}
+                    graphHeight={Lib.getScreenHeigth()-60}
+                    data={this.state.data}
+                    legend={["y=sin(x)","y=tan(x)","采集数据"]}
+                    graphType={[,,'*']}
                     graphColorPrimary={['#d00000','#00d000','#0000d0']}
                     graphColorSecondary='#000000'
-                    graphWidthPrimary="2.5"
+                    graphWidthPrimary="1"
                     graphWidthSecondary="2"
                     xUnit='x'
                     yUnit='y'
