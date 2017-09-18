@@ -106,10 +106,10 @@ android {
     }
     signingConfigs {
             release {
-                storeFile file(System.getenv("ANDROID_FILE"));
-                keyAlias System.getenv("ANDROID_KEYALIAS")
-                storePassword System.getenv("ANDROID_STORE_PASSWORD")
-                keyPassword System.getenv("ANDROID_KEY_PASSWORD")
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
             }
         }
     buildTypes {
