@@ -17,6 +17,7 @@ import notification from './notification';
 import camera from './camera';
 import svg from './svg';
 import chart from './chart';
+import swiper from './swiper';
 
 export default class ApiDemos extends Component {
     constructor(props) {
@@ -28,6 +29,7 @@ export default class ApiDemos extends Component {
                 {name: 'FetchBlob', title:'FetchBlobDemo', component: fetchBlob},
                 {name: 'SegmentedAndroid', title:'SegmentedAndroidDemo', component: segmentedAndroid},
                 {name: 'Gesture', title:'GestureDemo', component: gesture},
+                {name: 'SWiper', title:'SWiperDemo', component: swiper},
                 {name: 'Notification', title:'NotificationDemo', component: notification},
                 {name: 'Camera', title:'CameraDemo', component: camera},
                 {name: 'Svg', title:'SvgDemo', component: svg},
