@@ -1,5 +1,5 @@
 'use strict';
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import {
     // Navigator,
 } from 'react-native';
@@ -12,7 +12,7 @@ export default class App extends Component {
         super(props);
         this.state = {
             routes: [
-                {name: 'main', title:'ApiDemos', component: MainUI}
+                {name: 'main', title: 'ApiDemos', component: MainUI}
             ],
         };
     }
@@ -24,7 +24,7 @@ export default class App extends Component {
                 // renderScene={(route, navigator) =>
                 //     <Text>Hello {route.title}!</Text>
                 // }
-                renderScene={(route, navigator) =>{
+                renderScene={(route, navigator) => {
                     let Component = route.component;
                     return (<Component {...route.passProps} navigator={navigator} route={route}/>);
                 }}

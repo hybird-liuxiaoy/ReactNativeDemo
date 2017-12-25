@@ -22,7 +22,9 @@ describe('Test Button component', () => {
         expect(result).toMatchSnapshot();
     });
     it('renders correctly width test-utils', () => {
-        const node = shallow(<Button ref={ref => {this.button = ref}} />);
+        const node = shallow(<Button ref={ref => {
+            this.button = ref
+        }}/>);
         ReactTestUtils.Simulate.click(node);
     });
     // it('renders as expected', () => {

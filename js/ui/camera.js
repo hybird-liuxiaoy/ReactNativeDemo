@@ -15,17 +15,17 @@ export default class CameraDemo extends Component {
         this.state = {};
     }
 
-    parseData(a){
+    parseData(a) {
         console.log(a);
     }
 
-    render(){
+    render() {
         return (
             <BarcodeScanner
-                onBarCodeRead={  this.parseData.bind(this)  }
+                onBarCodeRead={this.parseData.bind(this)}
                 style={styles.camera}>
                 <View style={styles.rectangleContainer}>
-                    <View style={styles.rectangle} />
+                    <View style={styles.rectangle}/>
                 </View>
             </BarcodeScanner>
         );

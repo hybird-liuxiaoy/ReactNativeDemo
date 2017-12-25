@@ -8,8 +8,7 @@ import {
 export default class TextInput extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-        };
+        this.state = {};
     }
 
     render() {
@@ -19,13 +18,11 @@ export default class TextInput extends Component {
                 {...this.props}
                 style={[].concat(styles.input).concat(style)}
                 underlineColorAndroid={'transparent'}
-                numberOfLines={1} />
+                numberOfLines={1}/>
         );
     }
 };
 
 const styles = StyleSheet.create({
-    input: {
-
-    },
+    input: {},
 });

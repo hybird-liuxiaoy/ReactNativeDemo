@@ -11,23 +11,22 @@ export default class SwiperDemo extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-        };
+        this.state = {};
     }
 
-    componentWillMount(){
+    componentWillMount() {
     }
 
     render() {
-        return(
+        return (
             <View style={[styles.container]}>
                 <Swiper style={styles.swiper}>
-                    <View style={[styles.rect,{backgroundColor:"red"}]}></View>
-                    <View style={[styles.rect,{backgroundColor:"orange"}]}></View>
-                    <View style={[styles.rect,{backgroundColor:"yellow"}]}></View>
-                    <View style={[styles.rect,{backgroundColor:"green"}]}></View>
-                    <View style={[styles.rect,{backgroundColor:"blue"}]}></View>
-                    <View style={[styles.rect,{backgroundColor:"black"}]}></View>
+                    <View style={[styles.rect, {backgroundColor: "red"}]} />
+                    <View style={[styles.rect, {backgroundColor: "orange"}]} />
+                    <View style={[styles.rect, {backgroundColor: "yellow"}]} />
+                    <View style={[styles.rect, {backgroundColor: "green"}]} />
+                    <View style={[styles.rect, {backgroundColor: "blue"}]} />
+                    <View style={[styles.rect, {backgroundColor: "black"}]} />
                 </Swiper>
             </View>
         );
@@ -35,13 +34,13 @@ export default class SwiperDemo extends Component {
 };
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1
     },
-    swiper:{
+    swiper: {
         height: 240,
     },
-    rect:{
+    rect: {
         flex: 1
     }
 });

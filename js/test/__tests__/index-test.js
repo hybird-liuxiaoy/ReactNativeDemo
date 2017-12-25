@@ -95,6 +95,7 @@ test('test callback', done => {
         expect(data).toBe('peanut butter');
         done();//note this
     }
+
     doSomething(callback);
 });
 
@@ -104,6 +105,7 @@ function doPromise() {
         resolve('peanut butter');
     });
 }
+
 function doPromiseError() {
     return new Promise((resolve, reject) => {
         reject('error');

@@ -3,19 +3,19 @@
 export default {
 
     getCurrentTime() {
-        var date = new Date();
-        var year = date.getFullYear();
-        var month = date.getMonth() + 1;
-        var day = date.getDate();
-        if (month<10) month="0"+month;
-        if (day<10) day="0"+day;
+        const date = new Date();
+        const year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
         return year + '-' + month + '-' + day;
     },
     parser4File(timestamp) {
-        let linuxTime ;
-        if (timestamp){
+        let linuxTime;
+        if (timestamp) {
             linuxTime = new Date(parseInt(timestamp) * 1000);
-        }else {
+        } else {
             linuxTime = new Date();
         }
         let Y = linuxTime.getFullYear();
@@ -24,19 +24,19 @@ export default {
         let h = linuxTime.getHours();
         let m = linuxTime.getMinutes();
         let s = linuxTime.getSeconds();
-        if (M<10) M="0"+M;
-        if (D<10) D="0"+D;
-        if (h<10) h="0"+h;
-        if (m<10) m="0"+m;
-        if (s<10) s="0"+s;
+        if (M < 10) M = "0" + M;
+        if (D < 10) D = "0" + D;
+        if (h < 10) h = "0" + h;
+        if (m < 10) m = "0" + m;
+        if (s < 10) s = "0" + s;
         return `${Y}${M}${D}-${h}:${m}:${s}`;
     },
     getCustomTime(days) {
-        var now = new Date();
-        var date = new Date(now.getTime() - days * 24 * 3600 * 1000);
-        var year = date.getFullYear();
-        var month = date.getMonth() + 1;
-        var day = date.getDate();
+        let now = new Date();
+        let date = new Date(now.getTime() - days * 24 * 3600 * 1000);
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
         return year + '-' + month + '-' + day;
     },
 
@@ -50,17 +50,17 @@ export default {
         let date = `${Y}.${M}.${D}`;
         let time = m <= 9 ? `${h}:0${m}` : `${h}:${m}`;
 
-        var now = new Date();
-        var currentYear = now.getFullYear();
-        var currentMonth = now.getMonth() + 1;
-        var currentDay = now.getDate();
-        var currentHour = now.getHours();
-        var currentMinute = now.getMinutes();
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        let currentMonth = now.getMonth() + 1;
+        let currentDay = now.getDate();
+        let currentHour = now.getHours();
+        let currentMinute = now.getMinutes();
         let currentDate = `${currentYear}.${currentMonth}.${currentDay}`;
         let currentTime = `${currentHour}:${currentMinute}`;
 
-        if (date == currentDate) {
-            if (time == currentTime) {
+        if (date === currentDate) {
+            if (time === currentTime) {
                 return '刚刚';
             } else if (((currentHour - h) * 60 - m + currentMinute) < 60) {
                 // console.log(time)
@@ -74,10 +74,10 @@ export default {
     },
 
     parser(timestamp) {
-        let linuxTime ;
-        if (timestamp){
+        let linuxTime;
+        if (timestamp) {
             linuxTime = new Date(parseInt(timestamp) * 1000);
-        }else {
+        } else {
             linuxTime = new Date();
         }
         let Y = linuxTime.getFullYear();
@@ -86,19 +86,19 @@ export default {
         let h = linuxTime.getHours();
         let m = linuxTime.getMinutes();
         let s = linuxTime.getSeconds();
-        if (M<10) M="0"+M;
-        if (D<10) D="0"+D;
-        if (h<10) h="0"+h;
-        if (m<10) m="0"+m;
-        if (s<10) s="0"+s;
+        if (M < 10) M = "0" + M;
+        if (D < 10) D = "0" + D;
+        if (h < 10) h = "0" + h;
+        if (m < 10) m = "0" + m;
+        if (s < 10) s = "0" + s;
         return `${Y}-${M}-${D}  ${h}:${m}:${s}`;
     },
 
     local(timestamp) {
-        let linuxTime ;
-        if (timestamp){
+        let linuxTime;
+        if (timestamp) {
             linuxTime = new Date(parseInt(timestamp) * 1000);
-        }else {
+        } else {
             linuxTime = new Date();
         }
         let Y = linuxTime.getFullYear();
@@ -107,11 +107,11 @@ export default {
         let h = linuxTime.getHours();
         let m = linuxTime.getMinutes();
         let s = linuxTime.getSeconds();
-        if (M<10) M="0"+M;
-        if (D<10) D="0"+D;
-        if (h<10) h="0"+h;
-        if (m<10) m="0"+m;
-        if (s<10) s="0"+s;
+        if (M < 10) M = "0" + M;
+        if (D < 10) D = "0" + D;
+        if (h < 10) h = "0" + h;
+        if (m < 10) m = "0" + m;
+        if (s < 10) s = "0" + s;
         return `${Y}年${M}月${D}日  ${h}:${m}:${s}`;
     },
 

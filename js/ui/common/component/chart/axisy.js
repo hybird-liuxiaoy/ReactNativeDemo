@@ -28,12 +28,12 @@ const Axisy = ({width, height, xPadding, yPadding, ticks, startVal, endVal, scal
     return (
         <G>
             {/*<Line*/}
-                {/*stroke="#000000"*/}
-                {/*strokeWidth="0.75"*/}
-                {/*x1={xStart}*/}
-                {/*y1={yStart}*/}
-                {/*x2={xEnd}*/}
-                {/*y2={yEnd}/>*/}
+            {/*stroke="#000000"*/}
+            {/*strokeWidth="0.75"*/}
+            {/*x1={xStart}*/}
+            {/*y1={yStart}*/}
+            {/*x2={xEnd}*/}
+            {/*y2={yEnd}/>*/}
             {tickPoints.map(
                 pos => <Line
                     key={pos}

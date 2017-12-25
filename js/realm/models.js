@@ -53,6 +53,7 @@ class Person {
     get ageSeconds() {
         return Math.floor((Date.now() - this.birthday.getTime()));
     }
+
     get age() {
         return ageSeconds() / 31557600000;
     }

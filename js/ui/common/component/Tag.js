@@ -20,11 +20,11 @@ const Tag = (props) => {
 const NewTag = (props) => (
     <LevelTag
         backgroundColor='red'
-        name='New' />
+        name='New'/>
 );
 
 export default Tag;
-export { Tag, NewTag };
+export {Tag, NewTag};
 
 let styles = StyleSheet.create({
     tag: {

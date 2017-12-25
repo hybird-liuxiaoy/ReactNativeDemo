@@ -19,10 +19,10 @@ let padding = 40;
 let xPadding = 40;
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height / 2;
-const colors = ["#D96D69", "#FC993D","#47B2F8"];
-const legend = ["滚筒轴承温度", "主电机轴承温度","滚筒轴承温度"];
+const colors = ["#D96D69", "#FC993D", "#47B2F8"];
+const legend = ["滚筒轴承温度", "主电机轴承温度", "滚筒轴承温度"];
 const unit = "km/h";
-let yPadding = padding + Math.floor(legend.length/3) * 14 -2;
+let yPadding = padding + Math.floor(legend.length / 3) * 14 - 2;
 const AnimationDurationMs = 250;
 
 export default class Line extends Component {
@@ -31,11 +31,11 @@ export default class Line extends Component {
         super(props);
 
         this.allData = props.data;
-        let initPath = this.allData.map(()=> '');
-        let len = d3.max(this.allData, value=>value.length);
-        let xStart = len*2/3,xEnd = len;
+        let initPath = this.allData.map(() => '');
+        let len = d3.max(this.allData, value => value.length);
+        let xStart = len * 2 / 3, xEnd = len;
         this.previous = initPath;
-        this.data = this.slice(xStart,xEnd);
+        this.data = this.slice(xStart, xEnd);
         this.state = {
             path: initPath,
             xStart,
@@ -43,12 +43,12 @@ export default class Line extends Component {
         };
     }
 
-    getCurrentRange(){
-        let xMax = d3.max(this.data, value=>d3.max(value, v=>v.x));
-        let xMin = d3.min(this.data, value=>d3.min(value, v=>v.x));
-        let yMax = d3.max(this.data, value=>d3.max(value, v=>v.y));
-        let yMin = d3.min(this.data, value=>d3.min(value, v=>v.y));
-        return {xMax,xMin,yMax,yMin};
+    getCurrentRange() {
+        let xMax = d3.max(this.data, value => d3.max(value, v => v.x));
+        let xMin = d3.min(this.data, value => d3.min(value, v => v.x));
+        let yMax = d3.max(this.data, value => d3.max(value, v => v.y));
+        let yMin = d3.min(this.data, value => d3.min(value, v => v.y));
+        return {xMax, xMin, yMax, yMin};
     }
 
     componentWillMount() {
@@ -58,8 +58,8 @@ export default class Line extends Component {
     panResponder = PanResponder.create({
         onStartShouldSetResponder: () => true,
         onMoveShouldSetPanResponder: () => true,
-        onPanResponderGrant: (evt,gestureState) => {
-            console.log('Grant',evt.nativeEvent, gestureState)
+        onPanResponderGrant: (evt, gestureState) => {
+            console.log('Grant', evt.nativeEvent, gestureState)
             let touches = evt.nativeEvent.touches
             if (touches.length == 2) {
                 let touch1 = touches[0]
@@ -73,8 +73,8 @@ export default class Line extends Component {
             }
 
         },
-        onPanResponderMove: (evt,gestureState) => {
-            console.log('Move',evt.nativeEvent, gestureState)
+        onPanResponderMove: (evt, gestureState) => {
+            console.log('Move', evt.nativeEvent, gestureState)
             let touches = evt.nativeEvent.touches;
             if (touches.length == 2) {
                 let touch1 = touches[0];
@@ -95,33 +95,33 @@ export default class Line extends Component {
                 if (destXdif < originXdif) {
                     //zoom in
                     let increment = originXdif - destXdif;
-                    let left,right;
-                    left = this.state.xStart + Math.floor(Math.abs(increment/2) / svgWidth * this.data[0].length);
-                    right = this.state.xEnd - Math.ceil(Math.abs(increment/2) / svgWidth * this.data[0].length);
+                    let left, right;
+                    left = this.state.xStart + Math.floor(Math.abs(increment / 2) / svgWidth * this.data[0].length);
+                    right = this.state.xEnd - Math.ceil(Math.abs(increment / 2) / svgWidth * this.data[0].length);
                     if (left < 0) left = 0;
                     if (right > this.allData[0].length) right = this.allData[0].length;
-                    if (right-left > 8) {
+                    if (right - left > 8) {
                         this.setState({
-                            data:this.slice(left,right),
-                            xStart:left,
-                            xEnd:right,
+                            data: this.slice(left, right),
+                            xStart: left,
+                            xEnd: right,
                         });
                     }
                 }
 
                 if (destXdif > originXdif) {
                     //zoom out
-                    let increment =destXdif - originXdif;
-                    let left,right;
-                    left = this.state.xStart - Math.floor(Math.abs(increment/2) / svgWidth * this.data[0].length)
-                    right = this.state.xEnd + Math.ceil(Math.abs(increment/2) / svgWidth * this.data[0].length)
+                    let increment = destXdif - originXdif;
+                    let left, right;
+                    left = this.state.xStart - Math.floor(Math.abs(increment / 2) / svgWidth * this.data[0].length)
+                    right = this.state.xEnd + Math.ceil(Math.abs(increment / 2) / svgWidth * this.data[0].length)
                     if (left < 0) left = 0
                     if (right > this.allData[0].length) right = this.allData[0].length
-                    if (right-left > 8) {
+                    if (right - left > 8) {
                         this.setState({
-                            data:this.slice(left,right),
-                            xStart:left,
-                            xEnd:right,
+                            data: this.slice(left, right),
+                            xStart: left,
+                            xEnd: right,
                         });
                     }
                 }
@@ -140,11 +140,11 @@ export default class Line extends Component {
                         right = this.state.xEnd + offsetLength;
                     }
 
-                    if (left >= 0 && right<= this.allData[0].length) {
+                    if (left >= 0 && right <= this.allData[0].length) {
                         this.setState({
-                            data:this.slice(left,right),
-                            xStart:left,
-                            xEnd:right,
+                            data: this.slice(left, right),
+                            xStart: left,
+                            xEnd: right,
                         })
                     }
                 }
@@ -158,11 +158,11 @@ export default class Line extends Component {
                         left = this.state.xStart - offsetLength
                         right = this.state.xEnd - offsetLength
                     }
-                    if (left >= 0 && right<= this.allData[0].length) {
+                    if (left >= 0 && right <= this.allData[0].length) {
                         this.setState({
-                            data:this.slice(left,right),
-                            xStart:left,
-                            xEnd:right,
+                            data: this.slice(left, right),
+                            xStart: left,
+                            xEnd: right,
                         });
                     }
                 }
@@ -181,14 +181,14 @@ export default class Line extends Component {
         let xScale = d3.scaleLinear().domain([xPadding, width - xPadding]);
         // y grows to the bottom in SVG, but our y axis to the top
         let yScale = d3.scaleLinear().domain([height - yPadding, yPadding]);
-        let {xMax,xMin,yMax,yMin} = this.getCurrentRange();
+        let {xMax, xMin, yMax, yMin} = this.getCurrentRange();
         xScale.range([xMin, xMax]);
         yScale.range([yMin, yMax]);
-        return {xScale, yScale ,xMax,xMin,yMax,yMin};
+        return {xScale, yScale, xMax, xMin, yMax, yMin};
     };
 
     computeNextState(nextProps) {
-        let {xMax,xMin,yMax,yMin} = this.getCurrentRange();
+        let {xMax, xMin, yMax, yMin} = this.getCurrentRange();
         this.xScale.range([xMin, xMax]);
         this.yScale.range([yMin, yMax]);
         let pathTo = this.data.map(lineDataPoints => {
@@ -211,7 +211,7 @@ export default class Line extends Component {
         // this.animate();
     }
 
-    noAnimate(){
+    noAnimate() {
         this.setState({
             path: this.pathTo
         });
@@ -232,19 +232,19 @@ export default class Line extends Component {
                 return;
             }
 
-            this.data.forEach((item,index) => {
+            this.data.forEach((item, index) => {
                 this.pathAnimating[index].tween(delta);
             });
             this.animate(start);
         })
     }
 
-    slice = (start,end) => (
-        this.allData.map((item) => item.slice(start,end))
+    slice = (start, end) => (
+        this.allData.map((item) => item.slice(start, end))
     );
 
     render() {
-        let {xScale, yScale, xMax,xMin,yMax,yMin} = this.createScales(width, height, xPadding,yPadding);
+        let {xScale, yScale, xMax, xMin, yMax, yMin} = this.createScales(width, height, xPadding, yPadding);
         return (
             <View>
                 <View style={{height: 100, backgroundColor: '#FB7B2C'}}/>

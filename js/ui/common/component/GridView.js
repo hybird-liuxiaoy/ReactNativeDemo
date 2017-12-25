@@ -1,5 +1,5 @@
 'use strict';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     StyleSheet, Dimensions,
     View, Text, TouchableOpacity, FlatList
@@ -29,7 +29,7 @@ export default class GridView extends Component {
         const {data = []} = this.props;
         if (index >= data.length) {
             return (
-                <View style={style} />
+                <View style={style}/>
             );
         }
         let renderItem;
@@ -64,7 +64,7 @@ export default class GridView extends Component {
         return (
             <View>
                 {renderHeader && renderHeader()}
-                <View style={styles.separator} />
+                <View style={styles.separator}/>
             </View>
         );
     };
@@ -73,7 +73,7 @@ export default class GridView extends Component {
         const {renderFooter} = this.props;
         return (
             <View>
-                <View style={styles.separator} />
+                <View style={styles.separator}/>
                 {renderFooter && renderFooter()}
             </View>
         );
@@ -100,7 +100,7 @@ export default class GridView extends Component {
                 <FlatList
                     style={styles.container}
                     ItemSeparatorComponent={(separator) => (
-                        <View style={styles.separator} />)}
+                        <View style={styles.separator}/>)}
                     // columnWrapperStyle={styles.separator}
                     // getItemLayout={(data, index) => ( {length: this.width, offset: this.width * index, index} )}
                     data={list}

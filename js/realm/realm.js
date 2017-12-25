@@ -1,9 +1,10 @@
 'use strict';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     StyleSheet,
     Text, View
 } from 'react-native';
+
 const Realm = require('realm');
 
 class RealmDemo extends Component {
@@ -29,7 +30,7 @@ class RealmDemo extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex:1
+        flex: 1
     },
     welcome: {
         fontSize: 20,
@@ -41,16 +42,21 @@ const styles = StyleSheet.create({
 export default RealmDemo;
 
 // Define your models and their properties
-class Car {}
+class Car {
+}
+
 Car.schema = {
     name: 'Car',
     properties: {
-        make:  'string',
+        make: 'string',
         model: 'string',
         miles: 'int',
     }
 };
-class Person {}
+
+class Person {
+}
+
 Person.schema = {
     name: 'Person',
     properties: {

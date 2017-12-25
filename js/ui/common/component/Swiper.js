@@ -42,10 +42,10 @@ export default class Swiper extends Component {
             } else {
                 result = Math.round(this.positionValue);
             }
-            if (result < 0){
+            if (result < 0) {
                 result += childrenCount;
                 this.position.setValue(this.positionValue + childrenCount);
-            } else if(result >= childrenCount) {
+            } else if (result >= childrenCount) {
                 result -= childrenCount;
                 this.position.setValue(this.positionValue - childrenCount);
             }

@@ -1,6 +1,6 @@
 'use strict';
-import React, { Component } from 'react';
-import ReactNative,{
+import React, {Component} from 'react';
+import ReactNative, {
     StyleSheet,
     View,
 } from 'react-native';
@@ -12,18 +12,18 @@ import RNNotification from 'react-native-notification-android';
 export default class NotificationDemo extends Component {
     constructor(props) {
         super(props);
-        RNNotification.onNotificationClicked(()=>{
+        RNNotification.onNotificationClicked(() => {
             console.log(11111111);
         });
     }
 
-    show(message){
+    show(message) {
         RNNotification.showNotification(message);
     }
 
-    getNum(){
-        RNNotification.getApplicationIconBadgeNumber((err,num)=>{
-            if (err){
+    getNum() {
+        RNNotification.getApplicationIconBadgeNumber((err, num) => {
+            if (err) {
                 console.log(err);
                 return;
             }
@@ -31,7 +31,7 @@ export default class NotificationDemo extends Component {
         });
     }
 
-    clear(){
+    clear() {
         RNNotification.clearNotification();
     }
 
@@ -40,13 +40,13 @@ export default class NotificationDemo extends Component {
             <View style={styles.container}>
                 <Button
                     buttonText="show"
-                    submitCallback={()=>this.show("123")}></Button>
+                    submitCallback={() => this.show("123")}></Button>
                 <Button
                     buttonText="clear"
-                    submitCallback={()=>this.clear()}></Button>
+                    submitCallback={() => this.clear()}></Button>
                 <Button
                     buttonText="num"
-                    submitCallback={()=>this.getNum()}></Button>
+                    submitCallback={() => this.getNum()}></Button>
             </View>
         );
     }
@@ -55,7 +55,7 @@ export default class NotificationDemo extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection:'column',
+        flexDirection: 'column',
         backgroundColor: 'black'
     },
 

@@ -13,7 +13,7 @@ const getTickPoints = (start, end, numTicks) => {
     return res;
 };
 
-const Axis = ({width, height, xPadding, yPadding, ticks, startVal, endVal, scale ,vertical}) => {
+const Axis = ({width, height, xPadding, yPadding, ticks, startVal, endVal, scale, vertical}) => {
     let xStart = xPadding;
     let yStart = height - yPadding;
     let xEnd = vertical ? xStart : xStart + width;

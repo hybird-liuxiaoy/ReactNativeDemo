@@ -47,7 +47,7 @@ test('test mock return values', () => {
     const mock = jest.fn();
     mock.mockReturnValueOnce(false)
         .mockReturnValueOnce(true);
-    forEach([1,2],mock)
+    forEach([1, 2], mock)
     expect(mock.mock.instances.length).toBe(2);
     expect(mock.mock.calls.length).toBe(2);
     expect(mock.mock.calls[0][0]).toBe(1);

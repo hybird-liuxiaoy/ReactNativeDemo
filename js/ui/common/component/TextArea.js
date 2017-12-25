@@ -8,11 +8,10 @@ import {
 export default class TextArea extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-        };
+        this.state = {};
     }
 
-    _onChangeText= (text) => {
+    _onChangeText = (text) => {
         const {onChangeText} = this.props;
         this.setState({text});
         onChangeText && onChangeText(text);
@@ -32,7 +31,7 @@ export default class TextArea extends Component {
                     onChangeText={this._onChangeText}
                 />
                 <View style={styles.hint}>
-                    <Text style={textLength >= maxLength ? styles.hintMaxText : styles.hintText} >
+                    <Text style={textLength >= maxLength ? styles.hintMaxText : styles.hintText}>
                         {textLength}</Text>
                     <Text style={styles.hintText}>/{maxLength}</Text>
                 </View>
