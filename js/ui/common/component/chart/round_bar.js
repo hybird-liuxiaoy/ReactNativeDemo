@@ -1,6 +1,3 @@
-/*
- * Author: Max Created:06/13/2017
- */
 'use strict';
 import React from 'react';
 import {G,Circle,Rect,Text,Ellipse} from 'react-native-svg';

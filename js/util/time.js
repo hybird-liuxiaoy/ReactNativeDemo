@@ -1,6 +1,3 @@
-/**
- * Created by liuxy on 12/04/2017.
- */
 'use strict';
 
 export default {

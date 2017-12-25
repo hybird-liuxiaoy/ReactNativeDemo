@@ -1,6 +1,3 @@
-/**
- * Created by liuxy on 16/05/2017.
- */
 var Realm = require('realm');
 
 const CarSchema = {

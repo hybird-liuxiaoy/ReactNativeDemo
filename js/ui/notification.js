@@ -1,6 +1,3 @@
-/**
- * Created by liuxy on 16/10/26.
- */
 'use strict';
 import React, { Component } from 'react';
 import ReactNative,{

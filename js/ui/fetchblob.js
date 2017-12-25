@@ -1,6 +1,3 @@
-/**
- * Created by liuxy on 16/9/8.
- */
 'use strict';
 import React, {Component} from 'react';
 import {
@@ -23,7 +20,7 @@ export default class FetchDemo extends Component {
         };
         this.onPress();
     }
-    
+
     onPress(){
         let userinfo = {
             username: "13801234567",

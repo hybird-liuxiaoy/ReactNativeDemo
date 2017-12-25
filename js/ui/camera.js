@@ -1,6 +1,3 @@
-/**
- * Created by liuxy on 26/12/2016.
- */
 'use strict';
 import React, {Component} from 'react';
 import {

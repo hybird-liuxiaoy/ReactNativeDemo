@@ -1,6 +1,3 @@
-/*
- * Author: Max Created:05/08/2017
- */
 'use strict';
 import React from 'react';
 import {G, Rect, Text} from 'react-native-svg';

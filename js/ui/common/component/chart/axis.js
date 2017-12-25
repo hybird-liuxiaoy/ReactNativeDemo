@@ -1,6 +1,3 @@
-/* Copyright (c) 2017. Suzhou DHMS Information Technology Co.,Ltd.
- * Author: Max Created:05/04/2017
- */
 import React, {Component} from 'react';
 import {G, Line, Text} from 'react-native-svg';
 

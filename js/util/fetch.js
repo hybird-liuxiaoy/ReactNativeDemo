@@ -1,6 +1,3 @@
-/**
- * Created by liuxy on 17/1/16.
- */
 'use strict';
 
 var fetchMgr = {
