@@ -40,6 +40,9 @@ buck-out/
 \.buckd/
 *.keystore
 
+# jest
+__snapshots__/
+
 android/app/libs
 android/keystores/debug.keystore
 

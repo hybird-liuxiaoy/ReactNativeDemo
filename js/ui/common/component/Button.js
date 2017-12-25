@@ -5,16 +5,27 @@
 import React,{Component} from 'react';
 import {
     StyleSheet,
-    View, Text, TouchableOpacity,
+    View, Text, TouchableOpacity, ActivityIndicator
 } from 'react-native';
 
 export default class Button extends Component {
+
+    static propTypes = {
+        // ...View.propTypes,
+        isGrey: React.PropTypes.bool,
+        loading: React.PropTypes.bool,
+        loadingSize:ActivityIndicator.propTypes.size,
+        loadingColor:ActivityIndicator.propTypes.color,
+        onPress:React.PropTypes.func,
+        text:React.PropTypes.string,
+        buttonStyle:View.propTypes.style,
+        buttonTextStyle:Text.propTypes.style,
+    };
 
     constructor(props) {
         super(props);
 
         this.state = {
-            isGrey: this.props.isGrey || false,
         };
       }
 
@@ -23,12 +34,17 @@ export default class Button extends Component {
             <View style={styles.submitContainer}>
                 <TouchableOpacity
                     activeOpacity={0.4}
-                    style={[this.state.isGrey ? styles.submitContainerViewGrey : styles.submitContainerView,this.props.buttonStyle]}
-                    onPress={this.props.submitCallback} >
-                    <Text
-                        style={[this.state.isGrey ? styles.submitGrey : styles.submit,this.props.buttonTextStyle]}>
-                        {this.props.buttonText}
-                    </Text>
+                    style={[this.props.isGrey ? styles.submitContainerViewGrey : styles.submitContainerView,this.props.buttonStyle]}
+                    onPress={this.props.onPress} >
+                    {this.props.loading ?
+                        <ActivityIndicator size={this.props.loadingSize||"small"}
+                                           color={this.props.loadingColor||"#ffffff"}
+                        ></ActivityIndicator> :
+                        <Text
+                            style={[this.props.isGrey ? styles.submitGrey : styles.submit,this.props.buttonTextStyle]}>
+                            {this.props.text}
+                        </Text>
+                    }
                 </TouchableOpacity>
             </View>
         );
