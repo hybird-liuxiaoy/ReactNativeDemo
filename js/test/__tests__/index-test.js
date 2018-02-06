@@ -55,18 +55,41 @@ test('object assignment', () => {
     expect(data).not.toBe({one: 1, two: 2});//===
     expect(data).toBe(data);
 
-    expect(null).toBeNull();// not undefined
     expect(undefined).toBeUndefined();
+    expect().toBeUndefined();
+
+    expect(null).toBeNull();
+    expect(null).not.toBeUndefined();
     expect(null).toBeDefined();
     expect(data).toBeDefined();
 
+    expect(true).toBeTruthy();
     expect(1).toBeTruthy();
     expect(2).toBeTruthy();
     expect("abcd").toBeTruthy();
-    expect(true).toBeTruthy();
     expect(false).toBeFalsy();
     expect(null).toBeFalsy();
     expect(0).toBeFalsy();
+    expect().toBeFalsy();
+});
+
+// Truthiness
+test('null', () => {
+    const n = null;
+    expect(n).toBeNull();
+    expect(n).toBeDefined();
+    expect(n).not.toBeUndefined();
+    expect(n).not.toBeTruthy();
+    expect(n).toBeFalsy();
+});
+
+test('zero', () => {
+    const z = 0;
+    expect(z).not.toBeNull();
+    expect(z).toBeDefined();
+    expect(z).not.toBeUndefined();
+    expect(z).not.toBeTruthy();
+    expect(z).toBeFalsy();
 });
 
 
@@ -107,9 +130,10 @@ function doPromise() {
 }
 
 function doPromiseError() {
-    return new Promise((resolve, reject) => {
-        reject('error');
-    });
+    // return new Promise((resolve, reject) => {
+    //     reject('error');
+    // });
+    return Promise.reject('error');
 }
 
 test('test promise', () => {

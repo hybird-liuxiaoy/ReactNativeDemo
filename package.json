@@ -28,6 +28,7 @@
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "2.1.0",
     "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest": "20.0.4",
     "react-dom": "^16.1.1",
     "react-native-mock": "^0.3.1",
@@ -40,6 +41,10 @@
       "node_modules/jest-serializer-enzyme",
       "node_modules/expect",
       "node_modules/diff"
-    ]
+    ],
+    "setupFiles": [
+      "./js/test/config/setup.js"
+    ],
+    "testEnvironment": "jsdom"
   }
 }
