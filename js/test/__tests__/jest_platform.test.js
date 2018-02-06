@@ -73,7 +73,7 @@ test('jest-worker', () => {
 });
 
 async function main() {
-    const worker = new Worker(require.resolve('./heavy-task.js'));
+    const worker = new Worker(require.resolve('./heavy_task.js'));
 
     // run 2 tasks in parallel with different arguments
     const results = await Promise.all([

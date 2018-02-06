@@ -189,7 +189,7 @@ test('test promise rejects use async/await', async () => {
 });
 
 
-
+// More to see https://github.com/facebook/jest/tree/master/examples/async
 
 
 
