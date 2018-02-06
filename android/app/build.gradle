@@ -67,6 +67,11 @@ import com.android.build.OutputFile
 
 apply from: "../../node_modules/react-native/react.gradle"
 
+project.ext.vectoricons = [
+    iconFontNames: ['MaterialIcons.ttf', 'EvilIcons.ttf']
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 /**
  * Set this to true to create two separate APKs instead of one:
  *   - An APK that only works on ARM devices
@@ -87,7 +92,7 @@ android {
     buildToolsVersion '24.0.2'
 
     defaultConfig {
-        applicationId "com.awesomeproject"
+        applicationId "com.liuxy.awesomeproject"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
