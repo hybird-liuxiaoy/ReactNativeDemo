@@ -8,7 +8,7 @@ import {
 import * as d3 from 'd3';
 import Graph from 'react-native-line-plot';
 
-import Lib from '../util/lib';
+import Lib from '../../util/lib';
 
 export default class ChartDemo extends Component {
 
