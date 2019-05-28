@@ -36,6 +36,7 @@
   },
   "jest": {
     "preset": "react-native",
+
     "transformIgnorePatterns": [
       "node_modules/?!(react-native-root-siblings)",
       "node_modules/jest-serializer-enzyme",

@@ -5,7 +5,7 @@ import {
     View,
 } from 'react-native';
 
-import Swiper from './common/component/Swiper';
+import Swiper from '../component/Swiper';
 
 export default class SwiperDemo extends Component {
 

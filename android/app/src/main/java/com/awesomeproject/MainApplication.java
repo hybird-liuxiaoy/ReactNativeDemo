@@ -3,6 +3,7 @@ package com.awesomeproject;
 import android.app.Application;
 
 import com.RNFetchBlob.RNFetchBlobPackage;
+import com.crashlytics.android.Crashlytics;
 import com.dhms.rn.pushlibrary.RNPushAndroidPackage;
 import com.facebook.react.ReactApplication;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
@@ -17,6 +18,7 @@ import com.facebook.react.uimanager.ViewManager;
 import com.facebook.soloader.SoLoader;
 import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
+import io.fabric.sdk.android.Fabric;
 import io.realm.react.RealmReactPackage;
 
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
         SoLoader.init(this, /* native exopackage */ false);
         //getReactNativeHost().getReactInstanceManager().createReactContextInBackground();
     }
