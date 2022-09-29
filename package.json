@@ -9,7 +9,7 @@
   "dependencies": {
     "bson": "git+https://git.oschina.net/liuxy/react-native-modules#bson",
     "buffer": "^4.9.1",
-    "d3": "^4.10.0",
+    "d3": "^7.6.1",
     "react": "^16.0.0-alpha.12",
     "react-native": "^0.46.4",
     "react-native-barcode-scanner-universal": "^1.0.5",
